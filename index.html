@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang="tr">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Resme Tıkla</title>  
+    <style>  
+        #message {  
+            margin-top: 20px;  
+            font-size: 20px;  
+            display: none; /* Başlangıçta gizli */  
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <img src="emo.jpg" alt="Tıklanacak Resim" id="myImage" style="cursor: pointer;">  
+    <div id="message"></div>  
+
+    <script>  
+        const messages = [  
+            "Yetenekleri yok denecek kadar az değil, hiç yoktur.",  
+            "Her maç domalmaktadır.",  
+            "Yozgat asilzadesi bu embesilin en büyük hayali harem kurmaktır.",  
+            "Kaşları otoban yoluna benzeyen bu mahlukattan herkes korkmaktadır.",  
+            "Yılbaşında çok sevdiği kişiye hediye alma şansı bulduğu için her gün şükür namazı kılmaktadır."  
+        ];  
+
+        let index = 0;  
+
+        document.getElementById("myImage").onclick = function() {  
+            // Mesaj var mı?  
+            if (index < messages.length) {  
+                // Mesajı göster  
+                const messageDiv = document.getElementById("message");  
+                messageDiv.innerText = messages[index];  
+                messageDiv.style.display = "block"; // Mesajı görünür yap  
+                index++; // Bir sonraki mesaja geç  
+            } else {  
+                // Tüm mesajlar gösterildiyse, sıfırla  
+                index = 0;  
+                document.getElementById("message").style.display = "none"; // Gizle  
+            }  
+        };  
+    </script>  
+
+</body>  
+</html>
